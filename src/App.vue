@@ -10,6 +10,7 @@
 
 </template>
 
+
 <script>
 
   import Header from '@/components/Header.vue';
@@ -23,6 +24,7 @@ export default {
   components: {
 
     Header,
+
     Main
 
   }
@@ -33,7 +35,7 @@ export default {
 
 <style lang="scss">
 
-@import'@/style/general';
+  @import'@/style/general';
 
 
 </style>

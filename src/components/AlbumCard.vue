@@ -1,16 +1,16 @@
 <template>
 
-  <div>
+    <div>
 
-    <img :src="dettagli.poster" alt="">
+        <img :src="dettagli.poster" alt="">
 
-    <h5 class="text-center m-2">{{dettagli.title}}</h5>
+        <h5 class="text-center m-2">{{dettagli.title}}</h5>
 
-    <span class="text-center d-block">{{dettagli.author}}</span>
+        <span class="text-center d-block">{{dettagli.author}}</span>
 
-    <span class="text-center d-block">{{dettagli.year}}</span>
+        <span class="text-center d-block">{{dettagli.year}}</span>
 
-  </div>
+    </div>
 
 </template>
 
@@ -39,14 +39,11 @@
 
         span {
             color: #808080;
-
         }
 
         img{
-
             width: 100%;
             height: 55%;
-
         }
 
     }

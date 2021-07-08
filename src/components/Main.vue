@@ -2,12 +2,15 @@
 
     <div class="container-fluid p-3">
 
-        <div class="row justify-content-between p-5">
+        <div class="row justify-content-between p-5" v-if="!caricamento">
 
             <AlbumCard v-for="(elementi, index) in listAlbum" :key="index" :dettagli="elementi" class="col-2 alb m-3 p-4"/>
    
         </div>
 
+        <div v-else>
+            <Caricamento/>
+        </div>
     </div>
 
 </template>
@@ -17,6 +20,8 @@
 
     import axios from 'axios';
     import AlbumCard from '@/components/AlbumCard.vue';
+    import Caricamento from '@/components/Caricamento.vue';
+
 
     export default {
 
@@ -24,7 +29,8 @@
 
         components: {
 
-            AlbumCard
+            AlbumCard,
+            Caricamento
 
         },
 
@@ -34,7 +40,9 @@
 
                 apiURL : 'https://flynn.boolean.careers/exercises/api/array/music',
 
-                listAlbum : ''
+                listAlbum : '',
+
+                caricamento: true
 
             }
 
@@ -54,7 +62,7 @@
 
                     this.listAlbum = response.data.response;
 
-                    console.log(this.listAlbum);
+                    this.caricamento = false;
 
                 })
 
@@ -75,14 +83,13 @@
 
 <style lang="scss" scoped>
 
-    .container-fluid {
-        
+    .container-fluid {      
         background-color: #1e2d3b;
 
-        .alb{
-           
+        .alb{      
             background-color: #2e3a46;
         }
+
     }
 
 </style>
