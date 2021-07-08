@@ -19,7 +19,7 @@ export default {
 <style lang="scss" scoped>
 
     div{
-
+             
         h2 {
             position: absolute;
             left: 50%;
@@ -28,6 +28,7 @@ export default {
             text-transform: uppercase;
             font-size: 70px;
         }
+        
     }
 
 </style>

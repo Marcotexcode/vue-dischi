@@ -9,8 +9,11 @@
         </div>
 
         <div v-else>
+
             <Caricamento/>
+
         </div>
+
     </div>
 
 </template>
