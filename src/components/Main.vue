@@ -4,7 +4,9 @@
 
         <div class="row">
 
-            <div class="col-6">
+            <div v-for="(elementi, index) in listAlbum" :key="index" class="col-3">
+
+                prova
 
             </div>
             
@@ -18,13 +20,51 @@
 
     import axios from 'axios';
 
-export default {
+    export default {
 
-    name: 'Main',
+        name: 'Main',
+
+        data() {
+
+            return {
+
+                apiURL : 'https://flynn.boolean.careers/exercises/api/array/music',
+
+                listAlbum : []
+
+            }
+
+        },
+
+        created() {
+
+            this.getListAlbum();
+
+        },
+
+        methods: {
+
+            getListAlbum() {
+
+                axios.get(this.apiURL).then(response => {
+
+                    this.listAlbum = response.data.response;
+
+                    console.log(this.ListAlbum);
+
+                })
+
+                .catch(error => {
+
+                    console.log('Errore: ', error);
+
+                })
+
+            }
     
+        }
 
-
-}
+    }
 
 </script>
 
