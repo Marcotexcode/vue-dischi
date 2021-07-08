@@ -1,28 +1,32 @@
 <template>
 
-    <div class="container-fluid">
+    <div class="container-fluid p-3">
 
-        <div class="row">
+        <div class="row justify-content-between p-5">
 
-            <div v-for="(elementi, index) in listAlbum" :key="index" class="col-3">
-
-                prova
-
-            </div>
-            
+            <AlbumCard v-for="(elementi, index) in listAlbum" :key="index" :dettagli="elementi" class="col-2 alb m-3 p-4"/>
+   
         </div>
 
     </div>
 
 </template>
 
+
 <script>
 
     import axios from 'axios';
+    import AlbumCard from '@/components/AlbumCard.vue';
 
     export default {
 
         name: 'Main',
+
+        components: {
+
+            AlbumCard
+
+        },
 
         data() {
 
@@ -30,7 +34,7 @@
 
                 apiURL : 'https://flynn.boolean.careers/exercises/api/array/music',
 
-                listAlbum : []
+                listAlbum : ''
 
             }
 
@@ -50,7 +54,7 @@
 
                     this.listAlbum = response.data.response;
 
-                    console.log(this.ListAlbum);
+                    console.log(this.listAlbum);
 
                 })
 
@@ -68,11 +72,17 @@
 
 </script>
 
+
 <style lang="scss" scoped>
 
     .container-fluid {
-        height: calc(100vh - 70px);
+        
         background-color: #1e2d3b;
+
+        .alb{
+           
+            background-color: #2e3a46;
+        }
     }
 
 </style>
