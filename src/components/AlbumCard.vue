@@ -44,6 +44,7 @@
         img{
             width: 100%;
             height: 55%;
+            box-shadow: rgba(165, 165, 165, 0.56) 0px 22px 70px 4px;
         }
 
     }
