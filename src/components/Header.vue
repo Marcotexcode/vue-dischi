@@ -4,15 +4,26 @@
 
         <img src="@/assets/img/logo.png" alt="">
 
+        <SearchGenre />
     </nav>
 
 </template>
 
 <script>
 
+    import SearchGenre from '@/components/SearchGenre.vue';
+    
+
+
 export default {
 
-    name: 'Header'
+    name: 'Header',
+
+    components: {
+
+        SearchGenre
+
+    }
 
 }
 
@@ -23,7 +34,10 @@ export default {
     nav{
         background: #2e3a46;
         height: 70px;
-        padding: 10px;
+        padding: 10px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         img{
             width: 50px;
         }
